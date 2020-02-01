@@ -51,6 +51,9 @@ TagManager:
   - name: Props
     uniqueID: 3208467519
     locked: 0
+  - name: Player
+    uniqueID: 81950691
+    locked: 0
   - name: Vfx
     uniqueID: 3952324687
     locked: 0

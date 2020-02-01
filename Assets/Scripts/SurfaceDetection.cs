@@ -5,19 +5,29 @@ using UnityEngine;
 public class SurfaceDetection : MonoBehaviour
 {
     public LayerMask Ground;
+
     private float distance = 0.4f;
+    private float width = 0.35f;
+    private float step = 3;
+    private float increment;
 
-    public bool GroundDetection()
+    private void Awake()
     {
-        if (Physics2D.Raycast(transform.position, -Vector2.up, distance, Ground))
-            return true;
-
-        return false;
+        increment = width / step;
     }
 
 
-    private void FixedUpdate()
+    public bool GroundDetection()
     {
-        Debug.DrawRay(transform.position, -Vector2.up * distance, Color.red);
+        for (float i = -width; i < width; i += increment)
+        {
+            //Debug
+            Debug.DrawRay(transform.position + (Vector3.right * i), -Vector2.up * distance, Color.red);
+
+            if (Physics2D.Raycast(transform.position + (Vector3.right * i), -Vector2.up, distance, Ground))
+                return true;
+        }
+
+        return false;
     }
 }

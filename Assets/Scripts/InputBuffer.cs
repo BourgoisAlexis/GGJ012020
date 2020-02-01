@@ -1,11 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class InputBuffer : MonoBehaviour
 {
+    #region Variables
     private Dictionary<string, int> buffed = new Dictionary<string, int>();
     private int timer = 10;
+    #endregion
+
 
     private void Awake()
     {
@@ -17,11 +19,12 @@ public class InputBuffer : MonoBehaviour
         Decrease();
     }
 
+
     private void Setup()
     {
         buffed.Add("Jump", 0);
+        buffed.Add("Shoot", 0);
     }
-
 
     public bool CheckButton(string _button)
     {
@@ -30,6 +33,12 @@ public class InputBuffer : MonoBehaviour
                 return true;
 
         return false;
+    }
+
+    public void Executed(string _button)
+    {
+        if (buffed.ContainsKey(_button))
+            buffed[_button] = 0;
     }
 
     public void AddInput(string _input)

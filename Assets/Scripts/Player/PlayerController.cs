@@ -45,7 +45,10 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonDown("Shoot"))
                 buffer.AddInput("Shoot");
 
-            InputH = Input.GetAxisRaw("Horizontal");
+            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1)
+                InputH = Input.GetAxisRaw("Horizontal");
+            else
+                InputH = 0;
         }
         else
             InputH = 0;

@@ -15,7 +15,7 @@ TagManager:
   - 
   - Custom / Ground
   - Custom / Player
-  - 
+  - PostProcessing
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Space
+    uniqueID: 1864184047
+    locked: 0
+  - name: Wall
+    uniqueID: 285604367
+    locked: 0
+  - name: Props
+    uniqueID: 522039007
+    locked: 0
+  - name: Vfx
+    uniqueID: 3007815603
     locked: 0

@@ -10,9 +10,15 @@ public class TriggerPan : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            CameraManager.Instance.Pan(target);
-            UIManager.Instance.Cinemode();
-            gameObject.SetActive(false);
+            CameraManager.Instance.CineMode(target);
+            StartCoroutine(End());
         }
+    }
+
+    private IEnumerator End()
+    {
+        yield return new WaitForSeconds(2f);
+        CameraManager.Instance.CineModeEnd();
+        gameObject.SetActive(false);
     }
 }

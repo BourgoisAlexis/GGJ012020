@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: ef301d6f
+  m_ApplyToSortingLayers: 71ebb32e
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
-  m_ApplyToSortingLayers: 000000000ffa0511dfae1d1fb39f47b3
+  m_ApplyToSortingLayers: 00000000cf805c893f543dbf4fb093eb
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 1
   m_LightOrder: 0
@@ -471,6 +471,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3325941782446625387, guid: 1078f335b9913de4fb1bc5733eecd241,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1086499777
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325941782446625387, guid: 1078f335b9913de4fb1bc5733eecd241,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1078f335b9913de4fb1bc5733eecd241, type: 3}
 --- !u!1001 &394227043
@@ -591,7 +601,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.1
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000000ffa0511dfae1d1fb39f47b3
+  m_ApplyToSortingLayers: 00000000cf805c893f543dbf4fb093eb
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -678,6 +688,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735892842865289731, guid: 01ec795869d31e24e92cd32917089a5c,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1990426417
+      objectReference: {fileID: 0}
+    - target: {fileID: 735892842865289731, guid: 01ec795869d31e24e92cd32917089a5c,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01ec795869d31e24e92cd32917089a5c, type: 3}
@@ -812,12 +832,12 @@ PrefabInstance:
     - target: {fileID: 7748137605980646435, guid: a14f2c931d6e13a418ff7f41bd8e63cd,
         type: 3}
       propertyPath: m_SortingLayerID
-      value: 1864184047
+      value: 783543153
       objectReference: {fileID: 0}
     - target: {fileID: 7748137605980646435, guid: a14f2c931d6e13a418ff7f41bd8e63cd,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a14f2c931d6e13a418ff7f41bd8e63cd, type: 3}
@@ -877,7 +897,7 @@ PrefabInstance:
     - target: {fileID: 2209085669280395432, guid: 01ec795869d31e24e92cd32917089a5c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2209085669280395432, guid: 01ec795869d31e24e92cd32917089a5c,
         type: 3}
@@ -893,6 +913,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735892842865289731, guid: 01ec795869d31e24e92cd32917089a5c,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1990426417
+      objectReference: {fileID: 0}
+    - target: {fileID: 735892842865289731, guid: 01ec795869d31e24e92cd32917089a5c,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01ec795869d31e24e92cd32917089a5c, type: 3}
@@ -951,7 +981,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
-  m_ApplyToSortingLayers: 000000000ffa0511dfae1d1fb39f47b3
+  m_ApplyToSortingLayers: 00000000cf805c893f543dbf4fb093eb
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 1
   m_LightOrder: 0
@@ -1000,8 +1030,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 733454648}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1614831679}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1016445107
 PrefabInstance:
@@ -1053,7 +1083,7 @@ PrefabInstance:
     - target: {fileID: 4580025698181266883, guid: c6d5fa36301a70a4488fad89e0f9f28e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4580025698181266883, guid: c6d5fa36301a70a4488fad89e0f9f28e,
         type: 3}
@@ -1074,6 +1104,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749395037056736559, guid: c6d5fa36301a70a4488fad89e0f9f28e,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1990426417
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749395037056736559, guid: c6d5fa36301a70a4488fad89e0f9f28e,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6d5fa36301a70a4488fad89e0f9f28e, type: 3}
@@ -1113,6 +1153,7 @@ Transform:
   - {fileID: 776339035}
   - {fileID: 1016445108}
   - {fileID: 575703995}
+  - {fileID: 867892093}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1162,7 +1203,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1915574512
 GameObject:
@@ -1213,7 +1254,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
-  m_ApplyToSortingLayers: 000000000ffa0511dfae1d1fb39f47b3
+  m_ApplyToSortingLayers: 00000000cf805c893f543dbf4fb093eb
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 1
   m_LightOrder: 0

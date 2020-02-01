@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -13,9 +14,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Custom / Plateforme
+  - Custom / Player
+  - Custom / Interactable
   - 
   - 
   - 
@@ -40,4 +41,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Space
+    uniqueID: 783543153
+    locked: 0
+  - name: Wall
+    uniqueID: 2304540879
+    locked: 0
+  - name: Props
+    uniqueID: 3208467519
+    locked: 0
+  - name: Vfx
+    uniqueID: 3952324687
     locked: 0

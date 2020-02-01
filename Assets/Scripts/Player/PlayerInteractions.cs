@@ -11,7 +11,7 @@ public class PlayerInteractions : MonoBehaviour
     private InputBuffer buffer;
     private PlayerController controller;
 
-    private float interactionRadius = 2;
+    public float interactionRadius = 1;
     #endregion
 
 
@@ -24,11 +24,17 @@ public class PlayerInteractions : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Shoot"))
-            buffer.AddInput("Shoot");
+        if (controller.canInput)
+        {
+            if (Input.GetButtonDown("Shoot"))
+                buffer.AddInput("Shoot");
 
-        Interact();
+            Interact();
+        }
+        else
+            Skip();
     }
+
 
     private void Interact()
     {
@@ -39,10 +45,18 @@ public class PlayerInteractions : MonoBehaviour
             if (col != null)
             {
                 buffer.Executed("Shoot");
-                CameraManager.Instance.Pan(_transform);
-                UIManager.Instance.Cinemode();
+                CameraManager.Instance.CineMode(_transform);
                 col.GetComponent<Interactable>().InteractStart();
             }
+        }
+    }
+
+    private void Skip()
+    {
+        if (Input.GetButtonDown("Shoot"))
+        {
+            if(UIManager.Instance.DialogueBox.isActiveAndEnabled)
+                UIManager.Instance.DialogueBox.SkipPressed();
         }
     }
 }

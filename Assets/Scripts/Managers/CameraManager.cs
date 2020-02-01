@@ -13,7 +13,7 @@ public class CameraManager : MonoBehaviour
 
     private bool moving;
     private int margin = 10;
-    private int panSpeed = 40;
+    private int panSpeed = 30;
 
     //Accessors
     public int PanSpeed => panSpeed;
@@ -45,9 +45,17 @@ public class CameraManager : MonoBehaviour
     }
 
 
-    public void Pan(Transform _target)
+    public void CineMode(Transform _target)
     {
-        StartCoroutine(Panning((Vector2)(_target.position - _transform.position)));
+        StartCoroutine(CineModing((Vector2)(_target.position - _transform.position)));
+        UIManager.Instance.Cinemode(true);
+    }
+
+    public void CineModeEnd()
+    {
+        moving = true;
+        Player.GetComponent<PlayerController>().canInput = true;
+        UIManager.Instance.Cinemode(false);
     }
 
     public void Shake()
@@ -71,7 +79,7 @@ public class CameraManager : MonoBehaviour
         }
     }
 
-    private IEnumerator Panning(Vector2 _direction)
+    private IEnumerator CineModing(Vector2 _direction)
     {
         moving = false;
         Player.GetComponent<PlayerController>().canInput = false;
@@ -83,9 +91,5 @@ public class CameraManager : MonoBehaviour
             _transform.position += (Vector3)_direction / panSpeed;
             n++;
         }
-
-        yield return new WaitForSeconds(1);
-        moving = true;
-        Player.GetComponent<PlayerController>().canInput = true;
     }
 }

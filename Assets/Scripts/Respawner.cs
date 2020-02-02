@@ -8,7 +8,7 @@ public class Respawner : MonoBehaviour
     public static Respawner Instance;
 
     #region Variables
-    public List<Transform> RespawnPoints;
+    private List<Transform> RespawnPoints = new List<Transform>();
 
     private const string path = "Assets/Resources/Save.txt";
     private int index;
@@ -26,6 +26,11 @@ public class Respawner : MonoBehaviour
 
     private void Setup()
     {
+        RespawnPoint[] tempo = GetComponentsInChildren<RespawnPoint>();
+
+        for (int i = 0; i < tempo.Length; i++)
+            RespawnPoints.Add(tempo[i].transform);
+
         for (int i = 0; i < RespawnPoints.Count; i++)
             RespawnPoints[i].GetComponent<RespawnPoint>().Index = i;
     }
@@ -44,7 +49,7 @@ public class Respawner : MonoBehaviour
 
     public void Respawn(Transform _player)
     {
-        string test = File.ReadAllLines(path)[0];
-        _player.position = RespawnPoints[int.Parse(test)].position;
+        string index = File.ReadAllLines(path)[0];
+        _player.position = RespawnPoints[int.Parse(index)].position;
     }
 }

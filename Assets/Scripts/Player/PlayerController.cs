@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private float jumpHeight = 9;
 
     public bool canInput = true;
-    private bool canShoot = true;
+    private bool canShoot = false;
     private bool dead = false;
 
     private float InputH;
@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
         surf = GetComponent<SurfaceDetection>();
         buffer = GetComponent<InputBuffer>();
         playerAnim = GetComponent<PlayerAnimation>();
+
+        Weapon.gameObject.SetActive(false);
     }
 
     private void Start()
@@ -74,6 +76,12 @@ public class PlayerController : MonoBehaviour
             Shoot();
         }
 
+    }
+
+    public void AllowShoot()
+    {
+        Weapon.gameObject.SetActive(true);
+        canShoot = true;
     }
 
 

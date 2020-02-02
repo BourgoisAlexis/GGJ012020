@@ -58,9 +58,9 @@ public class DialogueBox : MonoBehaviour
         for (int i = 0; i < answerBoxes.Length; i++)
             answerBoxes[i].SetActive(false);
 
-        BackSprites.Add("Waifu", Waifu);
-        BackSprites.Add("Husbando", Husbando);
-        BackSprites.Add("Loli", Loli);
+        BackSprites.Add("BBM", Waifu);
+        BackSprites.Add("Nug", Husbando);
+        BackSprites.Add("Prat", Loli);
     }
 
     private void Update()
@@ -76,7 +76,7 @@ public class DialogueBox : MonoBehaviour
         lineIndex = _index;
         score = 0;
                 _HealthManager.ChangeState(score);
-        ChangeGraphs(1);
+        ChangeGraphs(0);
 
         lines = File.ReadAllLines(path + Name + ".txt");
         UpdateText();

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2662558155573724057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 2662558156822354114}
   m_RootOrder: 0
@@ -69,8 +69,9 @@ SpriteRenderer:
   m_SortingLayerID: -1086499777
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a50404a024fa08c4c952a43db77785f4, type: 3}
-  m_Color: {r: 0.99143416, g: 1, b: 0.60784316, a: 1}
+  m_Sprite: {fileID: -4252791121457908727, guid: 23bd5fb83a8a9e54bade3f78f3a28d3b,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -141,4 +142,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042207d36ccdc6644a0c633a4d2526cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Barbara
+  Name: BBM

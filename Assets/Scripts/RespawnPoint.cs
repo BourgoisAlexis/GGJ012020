@@ -23,7 +23,17 @@ public class RespawnPoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (index > 0)
+                other.GetComponent<PlayerController>().AllowShoot();
+
             Respawner.Instance.UpdateIndex(index);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+            if (index > 0)
+                other.GetComponent<PlayerController>().AllowShoot();
     }
 }

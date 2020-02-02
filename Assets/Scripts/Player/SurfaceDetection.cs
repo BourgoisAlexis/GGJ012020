@@ -7,7 +7,7 @@ public class SurfaceDetection : MonoBehaviour
     public LayerMask Ground;
 
     private float distance = 0.4f;
-    private float width = 0.35f;
+    private float width = 0.1f;
     private float step = 3;
     private float increment;
 

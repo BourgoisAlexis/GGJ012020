@@ -8,12 +8,12 @@ Hummm ... Hello ?
 Who the f*ck are you ?
 /A/
 ...
-/A/
+/AA/
 
 
 /R/
 1
-What did you just notice me !?
+What you did notice me !?
 /R/
 -1
 And you, who the f*ck are you ?!
@@ -33,7 +33,7 @@ Anyway that doesn't change much...
 Who are you ?
 /A/
 I don't care about you
-/A/
+/AA/
 
 
 /R/
@@ -57,7 +57,7 @@ Ha ha ! You so cute Nug.
 Are you trying to kill me ?
 /A/
 ...
-/A/
+/AA/
 
 
 /R/
@@ -65,7 +65,7 @@ Are you trying to kill me ?
 Thanks but I'm warning you about alien that are present aboard this ship.
 /R/
 -1
-I would love to but sadly, i can't, because aliens are aboard this ship and they will eat you alive.
+I would love to but i can't sadly because alien are aboard this ship and they will eat you alive.
 /R/
 0
 ...
@@ -81,7 +81,7 @@ I'll use you Nug !
 ...
 /A/
 I'm going to throw you to kill these aliens !
-/A/
+/AA/
 
 
 /R/
@@ -105,7 +105,7 @@ I hope these alien will use me to shot at you !
 How can i help you Nug ?
 /A/
 I don't have time to help an AI!
-/A/
+/AA/
 
 
 /R/
@@ -129,12 +129,12 @@ So do I.
 ...
 /A/
 *hit Nug* Do your job !
-/A/
+/AA/
 
 
 /R/
 1
-Utsukushiiii !!!!!!!!!
+Utshukushi !!!!!!!!!
 /R/
 0
 Ok...

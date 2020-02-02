@@ -1,0 +1,123 @@
+...
+/Q/
+
+
+/A/
+Huuumm ... Hi ?
+/A/
+Oh what a busu ! (ugly)
+/A/
+Hellooo you sweet girl *smiling sweetly*.
+/AA/
+
+
+/R/
+0
+Hello. My name is BBM I am an AI suited for engine room.
+/R/
+-1
+Another one ... *sigh*
+/R/
+1
+*embarrassed* He...Hello. My name is BBM I am an AI suited for engine room.
+/RR/
+
+What can I do for you ?
+/Q/
+
+
+/A/
+Shut the f*ck up and LET ME OUT OF HERE !
+/A/
+First... What can "I" do for you ? *with a big smile*
+/A/
+What happened to the ship ?
+/AA/
+
+
+/R/
+-1
+I don't understand your command, may you repeat ?
+/R/
+1
+Give me orders.
+/R/
+0
+Twenty years ago...
+/RR/
+
+Aliens invaded our ship and killed all the personnal aboard. 
+After this incident my superior send an SOS and then you are here now.
+/Q/
+
+
+/A/
+Don't worry I'm here to protect you !
+/A/
+Your superior ? interesting ;3
+/A/
+How can I help you ?
+/AA/
+
+
+/R/
+1
+Thanks.
+/R/
+-1
+*sigh* Everyone prefers my superior and I am just left all alone to do my job.
+/R/
+0
+Yes.
+/RR/
+
+Touch me if you want to leave.
+/Q/
+
+
+/A/
+Nani ?
+/A/
+*Smash the button*
+/A/
+*Pat the screen*
+/AA/
+
+
+/R/
+0
+touch this button.
+/R/
+-1
+Not this one !
+/R/
+1
+Touch this button.
+/RR/
+
+Touch my button... The green one to turn on the engine.
+/Q/
+
+
+/A/
+*pat the green button*
+/A/
+*smash the green button*
+/A/
+*touch the green button*
+/AA/
+
+
+/R/
+1
+...
+/R/
+-1
+...
+/R/
+0
+...
+/RR/
+
+Now you can go on.
+/E/

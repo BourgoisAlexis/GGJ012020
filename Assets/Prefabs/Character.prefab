@@ -69,7 +69,7 @@ SpriteRenderer:
   m_SortingLayerID: -1086499777
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4252791121457908727, guid: 23bd5fb83a8a9e54bade3f78f3a28d3b,
+  m_Sprite: {fileID: -5533681450154036779, guid: 4d6e2ddd8f889fa4e986790217299608,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -90,11 +90,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2662558156822354114}
-  - component: {fileID: 2662558156822354161}
+  - component: {fileID: 7824570831668902441}
   - component: {fileID: 2662558156822354160}
   m_Layer: 10
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,8 +114,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &2662558156822354161
-CircleCollider2D:
+--- !u!70 &7824570831668902441
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -127,9 +127,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Offset: {x: 0, y: 0.77}
+  m_Size: {x: 0.5, y: 3}
+  m_Direction: 0
 --- !u!114 &2662558156822354160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,4 +142,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042207d36ccdc6644a0c633a4d2526cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: BBM
+  Name: Nug

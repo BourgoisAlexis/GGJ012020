@@ -53,9 +53,7 @@ public class CameraManager : MonoBehaviour
 
     public void CineModeEnd()
     {
-        moving = true;
-        Player.GetComponent<PlayerController>().canInput = true;
-        UIManager.Instance.Cinemode(false);
+        StartCoroutine(CineModingEnd());
     }
 
     public void Shake()
@@ -67,8 +65,10 @@ public class CameraManager : MonoBehaviour
     //Coroutines
     private IEnumerator Shaking()
     {
+        Vector3 initPos = _transform.position;
+
         int n = 0;
-        float intensity = 0.15f;
+        float intensity = 0.12f;
 
         while (n < 3)
         {
@@ -78,6 +78,9 @@ public class CameraManager : MonoBehaviour
             _transform.position += new Vector3(x, y, 0);
             n++;
         }
+
+        if (!moving)
+            _transform.position = initPos;
     }
 
     private IEnumerator CineModing(Vector2 _direction)
@@ -92,5 +95,13 @@ public class CameraManager : MonoBehaviour
             _transform.position += (Vector3)_direction / panSpeed;
             n++;
         }
+    }
+
+    private IEnumerator CineModingEnd()
+    {
+        yield return new WaitForSeconds(0.1f);
+        moving = true;
+        Player.GetComponent<PlayerController>().canInput = true;
+        UIManager.Instance.Cinemode(false);
     }
 }

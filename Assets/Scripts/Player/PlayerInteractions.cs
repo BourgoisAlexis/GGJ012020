@@ -25,20 +25,13 @@ public class PlayerInteractions : MonoBehaviour
 
     private void Update()
     {
-        if (controller.canInput)
-        {
-            if (Input.GetButtonDown("Shoot"))
-                buffer.AddInput("Shoot");
-        }
-        else
-            Skip();
+        Skip();
     }
 
     private void Skip()
     {
-        if (Input.GetButtonDown("Shoot"))
+        if (Input.GetButtonDown("Jump"))
         {
-            buffer.Executed("Shoot");
             if(UIManager.Instance.DialogueBox.isActiveAndEnabled)
                 UIManager.Instance.DialogueBox.SkipPressed();
         }

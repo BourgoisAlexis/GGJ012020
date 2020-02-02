@@ -39,8 +39,7 @@ public class BulletBehaviour : MonoBehaviour
             other.GetComponent<Enemy>().Killed();
             Destroy(gameObject);
         }
-
-        if (!other.CompareTag("Player"))
+        else if (other.CompareTag("PlatForm"))
             Destroy(gameObject);
     }
 }

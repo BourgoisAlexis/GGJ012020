@@ -15,9 +15,9 @@ public class PlayerController : MonoBehaviour
 
     private float gravityMultiplier = 0.5f;
     private float accel = 0.6f;
-    private float maxHSpeed = 7;
+    private float maxHSpeed = 4;
     private float maxVSpeed = 30;
-    private float jumpHeight = 9;
+    private float jumpHeight = 7;
 
     public bool canInput = true;
     private bool canShoot = false;
@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
         {
             dead = true;
             canInput = false;
-            UIManager.Instance.BlackFade();
+            UIManager.Instance.BlackFade(true);
             playerAnim.Death();
         }
     }

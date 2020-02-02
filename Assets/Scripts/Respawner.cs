@@ -10,6 +10,7 @@ public class Respawner : MonoBehaviour
     #region Variables
     private List<Transform> RespawnPoints = new List<Transform>();
 
+    //private const string path = "GGJ_01_2020_Data/Resources/Save.txt";
     private const string path = "Assets/Resources/Save.txt";
     private int index;
     #endregion

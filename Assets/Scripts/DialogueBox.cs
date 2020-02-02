@@ -1,66 +1,45 @@
-﻿using UnityEngine.UI;
-using TMPro;
+﻿using TMPro;
 using System.IO;
 using UnityEngine;
-using System.Collections.Generic;
-using Pixeye.Unity;
+using System.Collections;
 
 public class DialogueBox : MonoBehaviour
 {
     #region Variables
     public TextMeshProUGUI Text;
     public GameObject[] answerBoxes;
-    public Image Background;
-    public HealthManager _HealthManager;
-
-    [Foldout("Sprites", false)]
-    public Sprite[] Waifu, Husbando, Loli;
 
     private BoxGraph boxGraph;
 
-    private Dictionary<string, Sprite[]> BackSprites = new Dictionary<string, Sprite[]>();
-    private string name;
+    private string characterName;
     private int lineIndex;
     private string[] lines;
     private bool answering;
     private int answerIndex;
+
     private bool canSelect;
+    private bool canAct;
     private int score;
 
-    private const string path = "Assets/Dialogues/";
     //Tags
     private const string question = "/Q/";
     private const string answer = "/A/";
+    private const string answerEnd = "/AA/";
     private const string reaction = "/R/";
     private const string reactionEnd = "/RR/";
     private const string end = "/E/";
 
-    //Accessors
-    public string Name
-    {
-        get
-        {
-            return name;
-        }
-        set
-        {
-            name = value;
-        }
-    }
+    //private const string path = "GGJ_01_2020_Data/Resources/";
+    private const string path = "Assets/Resources/";
     #endregion
 
 
     private void Awake()
     {
-        Text = GetComponentInChildren<TextMeshProUGUI>();
         boxGraph = GetComponent<BoxGraph>();
 
         for (int i = 0; i < answerBoxes.Length; i++)
             answerBoxes[i].SetActive(false);
-
-        BackSprites.Add("BBM", Waifu);
-        BackSprites.Add("Nug", Husbando);
-        BackSprites.Add("Prat", Loli);
     }
 
     private void Update()
@@ -70,38 +49,55 @@ public class DialogueBox : MonoBehaviour
     }
 
 
-    public void Setup(string _name, int _index)
+    public void Use(string _name, int _index)
     {
-        Name = _name;
+        characterName = _name;
         lineIndex = _index;
-        score = 0;
-                _HealthManager.ChangeState(score);
-        ChangeGraphs(0);
+        score = 2;
 
-        lines = File.ReadAllLines(path + Name + ".txt");
-        UpdateText();
+        boxGraph.UpdateHealth(score);
+        boxGraph.UpdateBackSprite(characterName, 0);
+
+        lines = File.ReadAllLines(path + characterName + ".txt");
+        StartCoroutine(UpdateText());
     }
 
     public void SkipPressed()
     {
-        if (!answering)
+        if(canAct)
         {
-            if (lineIndex < lines.Length - 1)
-                lineIndex++;
+            if (!answering)
+            {
+                if (lineIndex < lines.Length - 1)
+                    lineIndex++;
+                CheckEmpties();
 
-            CheckEmpties();
-            if (CheckTags())
-                return;
+                if (CheckTags())
+                    return;
 
-            UpdateText();
+                StartCoroutine(UpdateText());
+            }
+            else
+                SelectAnswer();
         }
-        else
-            SelectAnswer();
     }
 
-    private void UpdateText()
+    private IEnumerator UpdateText()
     {
-        Text.text = lines[lineIndex];
+        int current = 0;
+        string toDisplay = "";
+        int length = lines[lineIndex].Length;
+        canAct = false;
+
+        while(current < length)
+        {
+            yield return new WaitForFixedUpdate();
+            toDisplay += lines[lineIndex][current];
+            current++;
+            Text.text = toDisplay;
+        }
+
+        canAct = true;
     }
 
 
@@ -139,23 +135,21 @@ public class DialogueBox : MonoBehaviour
     private void DisplayAnswers()
     {
         answering = true;
-        answerIndex = 0;
         canSelect = true;
-        boxGraph.ChangeColor(answerIndex, true);
-        string[] answers = new string[3];
+        answerIndex = 0;
+        boxGraph.ButtonColor(answerIndex, true);
 
-        for (int i = 0; i < answers.Length; i++)
+        for (int i = 0; i < answerBoxes.Length; i++)
         {
             while (lines[lineIndex] != answer)
                 lineIndex++;
             lineIndex ++;
 
-            answers[i] = lines[lineIndex];
             answerBoxes[i].SetActive(true);
             answerBoxes[i].GetComponentInChildren<TextMeshProUGUI>().text = lines[lineIndex];
         }
 
-        while (lines[lineIndex] != answer)
+        while (lines[lineIndex] != answerEnd)
             lineIndex++;
         lineIndex++;
     }
@@ -168,9 +162,9 @@ public class DialogueBox : MonoBehaviour
             {
                 if (answerIndex < answerBoxes.Length - 1)
                 {
-                    boxGraph.ChangeColor(answerIndex, false);
+                    boxGraph.ButtonColor(answerIndex, false);
                     answerIndex++;
-                    boxGraph.ChangeColor(answerIndex, true);
+                    boxGraph.ButtonColor(answerIndex, true);
                     canSelect = false;
                 }
             }
@@ -178,9 +172,9 @@ public class DialogueBox : MonoBehaviour
             {
                 if (answerIndex > 0)
                 {
-                    boxGraph.ChangeColor(answerIndex, false);
+                    boxGraph.ButtonColor(answerIndex, false);
                     answerIndex--;
-                    boxGraph.ChangeColor(answerIndex, true);
+                    boxGraph.ButtonColor(answerIndex, true);
                     canSelect = false;
                 }
             }
@@ -203,18 +197,24 @@ public class DialogueBox : MonoBehaviour
 
         for (int i = 0; i < answerBoxes.Length; i++)
         {
-            boxGraph.ChangeColor(i, false);
+            boxGraph.ButtonColor(i, false);
             answerBoxes[i].SetActive(false);
         }
 
         answering = false;
 
-        ChangeGraphs(int.Parse(lines[lineIndex]));
+        boxGraph.UpdateBackSprite(characterName, int.Parse(lines[lineIndex]));
+
         score += int.Parse(lines[lineIndex]);
-        _HealthManager.ChangeState(score);
+        score = Mathf.Clamp(score, 0, 3);
+
+        boxGraph.UpdateHealth(score);
+
+        if (score <= 0)
+            CameraManager.Instance.Player.GetComponent<PlayerController>().Death();
 
         lineIndex++;
-        UpdateText();
+        StartCoroutine(UpdateText());
     }
 
 
@@ -230,12 +230,5 @@ public class DialogueBox : MonoBehaviour
     {
         CameraManager.Instance.CineModeEnd();
         gameObject.SetActive(false);
-    }
-
-    private void ChangeGraphs(int _index)
-    {
-        _index++;
-        Sprite[] current = BackSprites[name];
-        Background.sprite = current[_index];
     }
 }

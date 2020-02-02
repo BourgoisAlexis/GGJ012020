@@ -28,6 +28,8 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        BlackScreen.color = Color.black;
+        BlackFade(false);
         DialogueBox.gameObject.SetActive(false);
         speed = CameraManager.Instance.PanSpeed;
     }
@@ -37,9 +39,9 @@ public class UIManager : MonoBehaviour
         StartCoroutine(CineModing(_cine));
     }
 
-    public void BlackFade()
+    public void BlackFade(bool _b)
     {
-        StartCoroutine(BlackFading());
+        StartCoroutine(BlackFading(_b));
     }
 
 
@@ -71,29 +73,43 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private IEnumerator BlackFading()
+    private IEnumerator BlackFading(bool _b)
     {
-        Color color = new Color (0, 0, 0, 0);
-        float alpha = 0;
+        float wait = 0.3f;
 
-        while(BlackScreen.color.a < 1)
+        if(_b)
         {
-            yield return new WaitForFixedUpdate();
-            alpha += 0.05f;
-            color = new Color(0, 0, 0, alpha);
+            Color color = new Color(0, 0, 0, 0);
+            float alpha = 0;
             BlackScreen.color = color;
+
+            while (BlackScreen.color.a < 1)
+            {
+                yield return new WaitForFixedUpdate();
+                alpha += 0.05f;
+                color = new Color(0, 0, 0, alpha);
+                BlackScreen.color = color;
+            }
+
+            yield return new WaitForSeconds(wait);
+
+            SceneManager.LoadScene(0);
         }
-
-        yield return new WaitForSeconds(1);
-
-        SceneManager.LoadScene(0);
-
-        while (BlackScreen.color.a > 0)
+        else if(!_b)
         {
-            yield return new WaitForFixedUpdate();
-            alpha -= 0.05f;
-            color = new Color(0, 0, 0, alpha);
+            Color color = new Color(0, 0, 0, 1);
+            float alpha = 1;
             BlackScreen.color = color;
+
+            yield return new WaitForSeconds(wait);
+
+            while (BlackScreen.color.a > 0)
+            {
+                yield return new WaitForFixedUpdate();
+                alpha -= 0.05f;
+                color = new Color(0, 0, 0, alpha);
+                BlackScreen.color = color;
+            }
         }
     }
 }

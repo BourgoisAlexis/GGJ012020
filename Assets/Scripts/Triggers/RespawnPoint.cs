@@ -24,7 +24,7 @@ public class RespawnPoint : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             if (index > 0)
-                other.GetComponent<PlayerController>().AllowShoot();
+                other.GetComponent<PlayerController>()?.AllowShoot();
 
             Respawner.Instance.UpdateIndex(index);
         }
@@ -34,6 +34,6 @@ public class RespawnPoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
             if (index > 0)
-                other.GetComponent<PlayerController>().AllowShoot();
+                other.GetComponent<PlayerController>()?.AllowShoot();
     }
 }

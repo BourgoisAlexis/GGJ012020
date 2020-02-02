@@ -1,0 +1,148 @@
+...
+/Q/
+
+
+/A/
+Hummm ... Hello ?
+/A/
+Who the f*ck are you ?
+/A/
+...
+/A/
+
+
+/R/
+1
+What you did notice me !?
+/R/
+-1
+And you, who the f*ck are you ?!
+/R/
+0
+...
+/RR/
+
+
+Anyway that doesn't change much...
+/Q/
+
+
+/A/
+...
+/A/
+Who are you ?
+/A/
+I don't care about you
+/A/
+
+
+/R/
+0
+...
+/R/
+1
+I'm NUG, i'm an AI suited for guns, my goal is to help my master !
+/R/
+-1
+Same goes for me, b!tch !
+/RR/
+
+However you'll die soon ...
+/Q/
+
+
+/A/
+Ha ha ! You so cute Nug.
+/A/
+Are you trying to kill me ?
+/A/
+...
+/A/
+
+
+/R/
+1
+Thanks but I'm warning you about alien that are present aboard this ship.
+/R/
+-1
+I would love to but i can't sadly because alien are aboard this ship and they will eat you alive.
+/R/
+0
+...
+/RR/
+
+What are you going to do now that you know you are in danger ?
+/Q/
+
+
+/A/
+I'll use you Nug !
+/A/
+...
+/A/
+I'm going to throw you to kill these aliens !
+/A/
+
+
+/R/
+1
+Sadly i can't help you because you aren't my master.
+/R/
+0
+...
+/R/
+-1
+I hope these alien will use me to shot at you !
+/RR/
+
+*Sigh* I'm willing to help you but you need to do something for me first !
+/Q/
+
+
+/A/
+...
+/A/
+How can i help you Nug ?
+/A/
+I don't have time to help an AI!
+/A/
+
+
+/R/
+0
+...
+/R/
+1
+It's something embarassing ...
+/R/
+-1
+So do I.
+/RR/
+
+*sweet whisper* Well i need a little bit of affection... 
+/Q/
+
+
+/A/
+*sweet pat at Nug's bullet hole*
+/A/
+...
+/A/
+*hit Nug* Do your job !
+/A/
+
+
+/R/
+1
+Utshukushi !!!!!!!!!
+/R/
+0
+Ok...
+/R/
+-1
+You kusoyarô !!!!
+
+/RR/
+
+Now you are my master.
+/E/

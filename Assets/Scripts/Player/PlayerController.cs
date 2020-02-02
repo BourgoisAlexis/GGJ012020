@@ -11,15 +11,17 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private SurfaceDetection surf;
     private InputBuffer buffer;
+    private PlayerAnimation playerAnim;
 
     private float gravityMultiplier = 0.5f;
-    private float accel = 0.5f;
+    private float accel = 0.6f;
     private float maxHSpeed = 7;
     private float maxVSpeed = 30;
     private float jumpHeight = 9;
 
     public bool canInput = true;
     private bool canShoot = true;
+    private bool dead = false;
 
     private float InputH;
     private float currentHSpeed = 0;
@@ -33,6 +35,12 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         surf = GetComponent<SurfaceDetection>();
         buffer = GetComponent<InputBuffer>();
+        playerAnim = GetComponent<PlayerAnimation>();
+    }
+
+    private void Start()
+    {
+        Respawner.Instance.Respawn(transform);
     }
 
     private void Update()
@@ -58,9 +66,14 @@ public class PlayerController : MonoBehaviour
     {
         CustomGravity();
         ApplyPhysic();
-        Jump();
         HMove();
-        Shoot();
+
+        if(canInput)
+        {
+            Jump();
+            Shoot();
+        }
+
     }
 
 
@@ -95,6 +108,7 @@ public class PlayerController : MonoBehaviour
             {
                 currentVspeed = jumpHeight;
                 buffer.Executed("Jump");
+                playerAnim.Jump();
             }
     }
 
@@ -133,5 +147,16 @@ public class PlayerController : MonoBehaviour
         canShoot = false;
         yield return new WaitForSeconds(0.2f);
         canShoot = true;
+    }
+
+    public void Death()
+    {
+        if(dead == false)
+        {
+            dead = true;
+            canInput = false;
+            UIManager.Instance.BlackFade();
+            playerAnim.Death();
+        }
     }
 }

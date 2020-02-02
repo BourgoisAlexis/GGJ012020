@@ -64,6 +64,7 @@ public class CameraManager : MonoBehaviour
     }
 
 
+    //Coroutines
     private IEnumerator Shaking()
     {
         int n = 0;

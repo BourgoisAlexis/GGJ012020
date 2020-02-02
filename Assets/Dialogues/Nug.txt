@@ -13,7 +13,7 @@ Who the f*ck are you ?
 
 /R/
 1
-What you did notice me !?
+What did you just notice me !?
 /R/
 -1
 And you, who the f*ck are you ?!
@@ -65,7 +65,7 @@ Are you trying to kill me ?
 Thanks but I'm warning you about alien that are present aboard this ship.
 /R/
 -1
-I would love to but i can't sadly because alien are aboard this ship and they will eat you alive.
+I would love to but sadly, i can't, because aliens are aboard this ship and they will eat you alive.
 /R/
 0
 ...
@@ -134,7 +134,7 @@ So do I.
 
 /R/
 1
-Utshukushi !!!!!!!!!
+Utsukushiiii !!!!!!!!!
 /R/
 0
 Ok...

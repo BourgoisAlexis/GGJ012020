@@ -31,9 +31,16 @@ public class BulletBehaviour : MonoBehaviour
         Visual.localScale = new Vector3(scale * 2, 1 / scale, 1);
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
+        {
             other.GetComponent<Enemy>().Killed();
+            Destroy(gameObject);
+        }
+
+        if (!other.CompareTag("Player"))
+            Destroy(gameObject);
     }
 }

@@ -1,14 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.UI;
 using TMPro;
 using System.IO;
 using UnityEngine;
+using System.Collections.Generic;
+using Pixeye.Unity;
 
 public class DialogueBox : MonoBehaviour
 {
     #region Variables
     public TextMeshProUGUI Text;
     public GameObject[] answerBoxes;
+    public Image Background;
+
+    [Foldout("Sprites", true)]
+    public Sprite[] Waifu, Husbando, Loli;
+
+    private Dictionary<string, Sprite[]> BackSprites;
 
     private BoxGraph boxGraph;
 
@@ -214,5 +221,11 @@ public class DialogueBox : MonoBehaviour
     {
         CameraManager.Instance.CineModeEnd();
         gameObject.SetActive(false);
+    }
+
+
+    private void ChangeBackSprite()
+    {
+
     }
 }

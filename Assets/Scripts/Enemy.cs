@@ -53,6 +53,7 @@ public class Enemy : MonoBehaviour
     public void Killed()
     {
         rb.AddForce(_transform.up * ejectionForce);
+        tag = "Player";
         dead = true;
         Visual.sprite = Death;
     }

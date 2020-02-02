@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class PlayerInteractions : MonoBehaviour
@@ -11,7 +12,7 @@ public class PlayerInteractions : MonoBehaviour
     private InputBuffer buffer;
     private PlayerController controller;
 
-    public float interactionRadius = 1;
+    public float interactionRadius = 0.6f;
     #endregion
 
 
@@ -55,6 +56,7 @@ public class PlayerInteractions : MonoBehaviour
     {
         if (Input.GetButtonDown("Shoot"))
         {
+            buffer.Executed("Shoot");
             if(UIManager.Instance.DialogueBox.isActiveAndEnabled)
                 UIManager.Instance.DialogueBox.SkipPressed();
         }

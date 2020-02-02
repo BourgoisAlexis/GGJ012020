@@ -18,6 +18,7 @@ public class DialogueBox : MonoBehaviour
     private bool answering;
     private int answerIndex;
     private bool canSelect;
+    private int score;
 
     private const string path = "Assets/Dialogues/";
     //Tags
@@ -62,6 +63,7 @@ public class DialogueBox : MonoBehaviour
     {
         Name = _name;
         lineIndex = _index;
+        score = 0;
 
         lines = File.ReadAllLines(path + Name + ".txt");
         UpdateText();
@@ -133,7 +135,7 @@ public class DialogueBox : MonoBehaviour
         {
             while (lines[lineIndex] != answer)
                 lineIndex++;
-            lineIndex++;
+            lineIndex ++;
 
             answers[i] = lines[lineIndex];
             answerBoxes[i].SetActive(true);
@@ -193,6 +195,9 @@ public class DialogueBox : MonoBehaviour
         }
 
         answering = false;
+
+        score += int.Parse(lines[lineIndex]);
+        lineIndex++;
         UpdateText();
     }
 

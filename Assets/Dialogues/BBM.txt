@@ -7,7 +7,7 @@ Hummmmm ... Hi ?
 /A/
 Oh what a busu (ugly)
 /A/
-Hellooo you sweet girl *with a sweet smile*.
+Hellooo you sweet girl *put a sweet smile on their face*.
 /A/
 
 
@@ -19,7 +19,7 @@ Hi, my name is BBM i'm an AI suited for engine room.
 Another one ... *sigh*
 /R/
 1
-*embarrass* Hello, my name is BBM i'm an AI suited for engine room.
+*embarrassed* Hello, my name is BBM i'm an AI suited for engine room.
 /RR/
 
 What can I do for you ?
@@ -29,7 +29,7 @@ What can I do for you ?
 /A/
 Shut the f*ck up and LET ME IN !
 /A/
-No, what can I do for you *with a big smile*?
+No, what can I do for you *big smile* ?
 /A/
 What happened here ?
 /A/
@@ -37,7 +37,7 @@ What happened here ?
 
 /R/
 -1
-I don't understand your commande, please repeat.
+I don't understand your command, please repeat.
 /R/
 1
 Give me orders.
@@ -47,14 +47,14 @@ twenty years ago...
 /RR/
 
 Aliens invaded our ship and killed all the personnal aboard. 
-After this incident my superior send an SOS and then you are here now.
+After this incident my superior send an SOS and then here you are.
 /Q/
 
 
 /A/
 Don't worry i'm here to protect you !
 /A/
-Your superior, interesting :3
+Your superior huh, interesting :3
 /A/
 Can i help you ?
 /A/
@@ -65,7 +65,7 @@ Can i help you ?
 Thanks.
 /R/
 -1
-*sigh* Everyone prefers my superior and I'm left all alone to do my job.
+*sigh* Everyone prefers my superior over me and I'm left all alone to do my job.
 /R/
 0
 Yes.

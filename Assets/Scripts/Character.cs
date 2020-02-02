@@ -6,14 +6,21 @@ public class Character : Interactable
 {
     public string Name;
 
-    public override void InteractStart()
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Player"))
+            InteractStart(other.transform);
+    }
+
+    public override void InteractStart(Transform _transform)
+    {
+        CameraManager.Instance.CineMode(_transform);
         StartCoroutine(StartDialogue());
     }
 
     private IEnumerator StartDialogue()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.5f);
         UIManager.Instance.DialogueBox.gameObject.SetActive(true);
         UIManager.Instance.DialogueBox.Setup(Name, 0);
     }

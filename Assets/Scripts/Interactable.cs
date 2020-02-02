@@ -2,7 +2,7 @@
 
 public abstract class Interactable : MonoBehaviour
 {
-    public virtual void InteractStart()
+    public virtual void InteractStart(Transform _transform)
     {
 
     }

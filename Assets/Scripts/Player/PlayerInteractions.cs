@@ -29,27 +29,9 @@ public class PlayerInteractions : MonoBehaviour
         {
             if (Input.GetButtonDown("Shoot"))
                 buffer.AddInput("Shoot");
-
-            Interact();
         }
         else
             Skip();
-    }
-
-
-    private void Interact()
-    {
-        if(buffer.CheckButton("Shoot"))
-        {
-            Collider2D col = Physics2D.OverlapCircle(transform.position, interactionRadius, Interactable);
-
-            if (col != null)
-            {
-                buffer.Executed("Shoot");
-                CameraManager.Instance.CineMode(_transform);
-                col.GetComponent<Interactable>().InteractStart();
-            }
-        }
     }
 
     private void Skip()

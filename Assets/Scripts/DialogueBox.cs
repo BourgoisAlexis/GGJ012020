@@ -11,14 +11,14 @@ public class DialogueBox : MonoBehaviour
     public TextMeshProUGUI Text;
     public GameObject[] answerBoxes;
     public Image Background;
+    public HealthManager _HealthManager;
 
-    [Foldout("Sprites", true)]
+    [Foldout("Sprites", false)]
     public Sprite[] Waifu, Husbando, Loli;
-
-    private Dictionary<string, Sprite[]> BackSprites;
 
     private BoxGraph boxGraph;
 
+    private Dictionary<string, Sprite[]> BackSprites = new Dictionary<string, Sprite[]>();
     private string name;
     private int lineIndex;
     private string[] lines;
@@ -57,6 +57,10 @@ public class DialogueBox : MonoBehaviour
 
         for (int i = 0; i < answerBoxes.Length; i++)
             answerBoxes[i].SetActive(false);
+
+        BackSprites.Add("Waifu", Waifu);
+        BackSprites.Add("Husbando", Husbando);
+        BackSprites.Add("Loli", Loli);
     }
 
     private void Update()
@@ -71,6 +75,8 @@ public class DialogueBox : MonoBehaviour
         Name = _name;
         lineIndex = _index;
         score = 0;
+                _HealthManager.ChangeState(score);
+        ChangeGraphs(1);
 
         lines = File.ReadAllLines(path + Name + ".txt");
         UpdateText();
@@ -203,7 +209,10 @@ public class DialogueBox : MonoBehaviour
 
         answering = false;
 
+        ChangeGraphs(int.Parse(lines[lineIndex]));
         score += int.Parse(lines[lineIndex]);
+        _HealthManager.ChangeState(score);
+
         lineIndex++;
         UpdateText();
     }
@@ -223,9 +232,10 @@ public class DialogueBox : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-
-    private void ChangeBackSprite()
+    private void ChangeGraphs(int _index)
     {
-
+        _index++;
+        Sprite[] current = BackSprites[name];
+        Background.sprite = current[_index];
     }
 }

@@ -1,0 +1,57 @@
+Salut moi c'est Barbara 
+J'adore les ananas et les chevaux
+J'aime aussi les longues promenades sur les lages de sables fin 
+Et toi tu aimes ça ?
+/Q/
+
+
+/A/
+oui
+/A/
+non
+/A/
+bof
+/A/
+
+
+/R/
+1
+ouaiiiiiiis
+Je suis si contente
+haha
+/R/
+-1
+Hooooooo
+/R/
+0
+maiheuuu
+/RR/
+
+
+Tu sais Ce que j'aime aussi ?
+/Q/
+
+
+/A/
+Les pates ?
+/A/
+Les chaussures !
+/A/
+Je ne sais pas
+/A/
+
+
+/R/
+0
+Pas specialement
+/R/
+1
+OUIIIIIII !
+/R/
+-1
+Roooh...
+Tu n'es vraiment pas drole
+/RR/
+
+C'est la fin
+/E/

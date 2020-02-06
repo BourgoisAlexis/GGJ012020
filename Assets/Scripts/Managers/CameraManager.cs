@@ -7,12 +7,12 @@ public class CameraManager : MonoBehaviour
 
     #region Variables
     public Transform Player;
-    public Transform CinematicTarget;
 
+    private PlayerController playerController;
     private Transform _transform;
-
-    private bool moving;
-    private int margin = 10;
+    private bool followPlayer;
+    private int zOffset = -10;
+    private float smoothingFactor = 0.4f;
     private int panSpeed = 30;
 
     //Accessors
@@ -28,32 +28,41 @@ public class CameraManager : MonoBehaviour
             DestroyImmediate(gameObject);
 
         _transform = transform;
-        moving = true;
+        playerController = Player.GetComponent<PlayerController>();
+        followPlayer = true;
     }
 
     private void FixedUpdate()
     {
-        if (moving)
+        if (followPlayer)
             FollowPlayer();
+
+        AdjustZ();
     }
 
 
     private void FollowPlayer()
     {
-        _transform.position = Vector3.Lerp(_transform.position, Player.position, 0.4f);
-        _transform.position -= new Vector3(0, 0, margin);
+        _transform.position = Vector3.Lerp(_transform.position, Player.position, smoothingFactor);
     }
 
-
-    public void CineMode(Transform _target)
+    private void AdjustZ()
     {
-        StartCoroutine(CineModing((Vector2)(_target.position - _transform.position)));
-        UIManager.Instance.Cinemode(true);
+        _transform.position = new Vector3(_transform.position.x, _transform.position.y, zOffset);
     }
 
-    public void CineModeEnd()
+    public void CineMode(bool _cine, Transform _target)
     {
-        StartCoroutine(CineModingEnd());
+        if(_cine)
+        {
+            StartCoroutine(CineModing(_target.position - _transform.position));
+            UIManager.Instance.Cinemode(true);
+        }
+        else
+        {
+            StartCoroutine(CineModingEnd());
+            UIManager.Instance.Cinemode(false);
+        }
     }
 
     public void Shake()
@@ -63,12 +72,33 @@ public class CameraManager : MonoBehaviour
 
 
     //Coroutines
+    private IEnumerator CineModing(Vector3 _direction)
+    {
+        followPlayer = false;
+        playerController.canInput = false;
+        int n = 0;
+
+        while (n < panSpeed)
+        {
+            yield return new WaitForFixedUpdate();
+            _transform.position += _direction / panSpeed;
+            n++;
+        }
+    }
+
+    private IEnumerator CineModingEnd()
+    {
+        yield return new WaitForSeconds(0.1f);
+        followPlayer = true;
+        playerController.canInput = true;
+    }
+
     private IEnumerator Shaking()
     {
         Vector3 initPos = _transform.position;
 
         int n = 0;
-        float intensity = 0.12f;
+        float intensity = 0.08f;
 
         while (n < 3)
         {
@@ -79,29 +109,7 @@ public class CameraManager : MonoBehaviour
             n++;
         }
 
-        if (!moving)
+        if (!followPlayer)
             _transform.position = initPos;
-    }
-
-    private IEnumerator CineModing(Vector2 _direction)
-    {
-        moving = false;
-        Player.GetComponent<PlayerController>().canInput = false;
-        int n = 0;
-
-        while (n < panSpeed)
-        {
-            yield return new WaitForFixedUpdate();
-            _transform.position += (Vector3)_direction / panSpeed;
-            n++;
-        }
-    }
-
-    private IEnumerator CineModingEnd()
-    {
-        yield return new WaitForSeconds(0.1f);
-        moving = true;
-        Player.GetComponent<PlayerController>().canInput = true;
-        UIManager.Instance.Cinemode(false);
     }
 }

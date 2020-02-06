@@ -3,7 +3,7 @@
 
 
 /A/
-Hummm ... Hello ?
+Herm... Hello ?
 /A/
 Who the f*ck are you ?
 /A/
@@ -13,26 +13,26 @@ Who the f*ck are you ?
 
 /R/
 1
-What you did notice me !?
+What ? Did you just... notice me !?
 /R/
 -1
-And you, who the f*ck are you ?!
+Same goes for you, who the f*ck are you ?!
 /R/
 0
 ...
 /RR/
 
 
-Anyway that doesn't change much...
+Anyway that doesn't change much about our situation... And i just wanted some company.
 /Q/
 
 
 /A/
 ...
 /A/
-Who are you ?
+May i know who you are, bishonen ?
 /A/
-I don't care about you
+I don't care about you.
 /AA/
 
 
@@ -41,18 +41,18 @@ I don't care about you
 ...
 /R/
 1
-I'm NUG, i'm an AI suited for guns, my goal is to help my master !
+I'm NUG, please to meet you ! I'm an AI suited for guns, my goal is to help my master !
 /R/
 -1
 Same goes for me, b!tch !
 /RR/
 
-However you'll die soon ...
+However, i'm sorry to say this, and this may be abrupt, but... you'll die soon ...
 /Q/
 
 
 /A/
-Ha ha ! You so cute Nug.
+Ha ha ! You're good at making jokes ! You're so cute, Nug. *wink wink*
 /A/
 Are you trying to kill me ?
 /A/
@@ -62,37 +62,37 @@ Are you trying to kill me ?
 
 /R/
 1
-Thanks but I'm warning you about alien that are present aboard this ship.
+Thanks for your compliment, i'm glad you find me funny and cute. But I'm serious you know. I'm warning you about aliens that are present aboard this ship...
 /R/
 -1
-I would love to but i can't sadly because alien are aboard this ship and they will eat you alive.
+I would love to, b!tch, but sadly i can't, because aliens are aboard this ship and they will eat you alive before i can do anything. Hmpf.
 /R/
 0
 ...
 /RR/
 
-What are you going to do now that you know you are in danger ?
+What are you going to do now that you know you're in danger ?
 /Q/
 
 
 /A/
-I'll use you Nug !
+I'll use you to defend both of us, my sweet Nug !
 /A/
 ...
 /A/
-I'm going to throw you to kill these aliens !
+I'll throw you at their face to kill them !
 /AA/
 
 
 /R/
 1
-Sadly i can't help you because you aren't my master.
+Sadly, I can't help you because you aren't my master.
 /R/
 0
 ...
 /R/
 -1
-I hope these alien will use me to shot at you !
+I hope these aliens will use me to shoot at you, you nasty bast*rd !
 /RR/
 
 *Sigh* I'm willing to help you but you need to do something for me first !
@@ -102,9 +102,9 @@ I hope these alien will use me to shot at you !
 /A/
 ...
 /A/
-How can i help you Nug ?
+And how can I help you, Nug ?
 /A/
-I don't have time to help an AI!
+I don't have time to help a stupid A.I!
 /AA/
 
 
@@ -113,18 +113,18 @@ I don't have time to help an AI!
 ...
 /R/
 1
-It's something embarassing ...
+It's something... quite embarassing ...
 /R/
 -1
 So do I.
 /RR/
 
-*sweet whisper* Well i need a little bit of affection... 
+*sweet whisper* Well... I need a little bit of affection...If you know what i mean *doki doki* 
 /Q/
 
 
 /A/
-*sweet pat at Nug's bullet hole*
+*sweet pat at Nug's bullet hole* i hope you like this *smile*
 /A/
 ...
 /A/
@@ -134,15 +134,40 @@ So do I.
 
 /R/
 1
-Utshukushi !!!!!!!!!
+Haaaaan Utsukushiiiiii !!!!!!!!!
 /R/
 0
 Ok...
 /R/
 -1
-You kusoyarô !!!!
+YOU KUSOYARO !!!!
 
 /RR/
 
-Now you are my master.
+...
+/Q/
+
+
+/A/
+Do you like how my hands touched you, sweetheart ?
+/A/
+...
+/A/
+What, you want another punch in your face, kusottare ?
+/AA/
+
+
+/R/
+1
+I want more ... please...
+/R/
+0
+...
+/R/
+-1
+I'll fuck*n' kill you, one day, i swear
+
+/RR/
+
+Now ... you're my master. Use me carefuly please
 /E/

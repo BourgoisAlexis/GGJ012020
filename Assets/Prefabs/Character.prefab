@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 2662558156822354114}
   - component: {fileID: 7824570831668902441}
   - component: {fileID: 2662558156822354160}
+  - component: {fileID: 8217660158042107804}
   m_Layer: 10
   m_Name: Character
   m_TagString: Player
@@ -143,3 +144,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Nug
+--- !u!95 &8217660158042107804
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2662558156822354126}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3a8f986e64a622f418ac40f1bea2b06d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

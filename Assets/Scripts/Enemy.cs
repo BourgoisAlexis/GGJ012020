@@ -106,7 +106,8 @@ public class Enemy : MonoBehaviour
 
 
         yield return new WaitForSeconds(0.2f);
-        Visual.sprite = Idle;
+        if(!dead)
+            Visual.sprite = Idle;
         yield return new WaitForSeconds(0.3f);
         canAttack = true;
     }

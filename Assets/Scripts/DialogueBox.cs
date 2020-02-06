@@ -228,7 +228,7 @@ public class DialogueBox : MonoBehaviour
 
     private void End()
     {
-        CameraManager.Instance.CineModeEnd();
+        CameraManager.Instance.CineMode(false, null);
         gameObject.SetActive(false);
     }
 }

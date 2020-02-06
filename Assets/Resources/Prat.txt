@@ -5,55 +5,55 @@
 /A/
 Are you the boss ? 
 /A/
-Oh you're so cute *try to pinch AI cheek*
+Aaaaaaaw what a cutie ! *try to pinch AI cheek*
 /A/
-Hi captain !
+Hi, captain !
 /AA/
 
 
 /R/
 0
-I'm Prat, the wonderful AI captain of this ship !
+I'm Prat, the wonderful A.I who's the captain of this ship !
 /R/
 -1
-Baka !!! I'm the captain of this ship, how dare you touch me with your filthy hands !
+B...Ba...Baaaaaka !!! I'm the captain of this ship, how dare you touch me with your filthy hands, you peasant ?!
 /R/
 1
-Oh a new follower ! That's wonderful !
+Oh ! A new follower ! That's wonderful !
 /RR/
 
-So you're the one who received our signal and gonna repair our ship ?
+So you're the one who received our signal and who'll repair our ship ?
 /Q/
 
 
 /A/
-Yeah but with these difficulties the bill will be salted.
+Yeah... But with these difficulties, the bill will be salted. 
 /A/
 Yes.
 /A/
-That's correct, but first i need your help against these aliens.
+That's correct ! But first i need your help to defeat these aliens.
 /AA/
 
 
 /R/
 -1
-Baka ! If you're uncompetent why did you come then ?
+Baka ! If you're incompetent, why did you even come ?
 /R/
 0
 Good.
 /R/
 1
-Great but you need to do something for me.
+Great ! But you need to do something for me.
 /RR/
 
-Since all my followers died due to these aliens, i feel so lonely.
+Since all my followers died due to these aliens, I feel so lonely... 
 /Q/
 
 
 /A/
 How pitiful ...
 /A/
-But now i'm here for you. *Tenderly caresses their nipples* 
+But now, I'm here for you my cute little fella. *Tenderly caresses their nipples*
 /A/
 And ?
 /AA/
@@ -61,37 +61,37 @@ And ?
 
 /R/
 0
-yeah, but you can't understand that feeling ...
+Yeah, but you can't understand that feeling ...
 /R/
 1
-I know but can you stop to touch your nipples ?
+I know but... Can you stop touching your...your nipples ?
 /R/
 -1
-I don't want to have a morron like you within my followers.
+I don't want to have a morron like you within my followers ! STUPID FACE !
 /RR/
 
-It's been a while since my last gentle caress.
+It's been a while since my last gentle caress... I want one !
 /Q/
 
 
 /A/
-*pat Prat face on the screen*
+*pat Prat's face on the screen*
 /A/
-Wut ?
+Whut !?
 /A/
-Is this legal ?
+Are you even legal ?
 /AA/
 
 
 /R/
 1
-Subarashiiii
+Subarashiiii !
 /R/
 0
-Just caress me baka.
+Just caress me bakayaro.
 /R/
 -1
-Of course I am, idiot !
+Of course I am ! Idiot !
 
 /RR/
 
@@ -100,7 +100,7 @@ Now if you want to leave, do your job !
 
 
 /A/
-*Restart the computer.*
+*Restart the computer*
 /A/
 Ok Prat ...
 /A/
@@ -110,15 +110,39 @@ Ok Prat ...
 
 /R/
 -1
-Prat.exe stop to working. ERROR 404.
+Prat.exe stopped working. ERROR 404.
 /R/
 0
 What can i do for you ?
 /R/
 1
-SU SU SUGOIIII !!!!!
+KI...KI...KIMOCHIIIII !!!!! SUGOIIII
 /RR/
 
+
+...
+/Q/
+
+
+/A/
+Hahaha are you alright, pile of scrap *laugh nervously*
+/A/
+Just tell me... are you a boy or a girl ?
+/A/
+How was it ? Not too harsh ?
+/AA/
+
+
+/R/
+-1
+*bip bip* URUSAIIII BAKA*bip bip*
+/R/
+0
+... surprise.
+/R/
+1
+It was... the best feeling ever *doki doki*
+/RR/
 
 Now you can go on.
 /E/

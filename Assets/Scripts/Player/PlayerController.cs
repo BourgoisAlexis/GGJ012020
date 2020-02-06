@@ -4,14 +4,17 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     #region Variables
-    public Transform Visual;
-    public Transform Weapon;
-    public GameObject BulletPrefab;
+    [SerializeField]
+    private Transform Visual;
+    [SerializeField]
+    private Transform Weapon;
+    [SerializeField]
+    private GameObject BulletPrefab;
 
-    private Rigidbody2D rb;
+    private PlayerAnimation playerAnim;
     private SurfaceDetection surf;
     private InputBuffer buffer;
-    private PlayerAnimation playerAnim;
+    private Rigidbody2D rb;
 
     private float gravityMultiplier = 0.5f;
     private float accel = 0.6f;
@@ -19,14 +22,14 @@ public class PlayerController : MonoBehaviour
     private float maxVSpeed = 30;
     private float jumpHeight = 7;
 
+    private float InputH;
+    private float speedValue;
+    private float currentHSpeed = 0;
+    private float currentVspeed = 0;
+
     public bool canInput = true;
     private bool canShoot = false;
     private bool dead = false;
-
-    private float InputH;
-    private float currentHSpeed = 0;
-    private float speedValue;
-    private float currentVspeed = 0;
     #endregion
 
 
@@ -47,6 +50,25 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        Inputs();
+    }
+
+    private void FixedUpdate()
+    {
+        CustomGravity();
+        ApplyPhysic();
+        HMove();
+
+        if(canInput)
+        {
+            Jump();
+            Shoot();
+        }
+    }
+
+
+    private void Inputs()
+    {
         if (canInput)
         {
             if (Input.GetButtonDown("Jump"))
@@ -64,36 +86,25 @@ public class PlayerController : MonoBehaviour
             InputH = 0;
     }
 
-    private void FixedUpdate()
-    {
-        CustomGravity();
-        ApplyPhysic();
-        HMove();
-
-        if(canInput)
-        {
-            Jump();
-            Shoot();
-        }
-
-    }
-
     public void AllowShoot()
     {
         Weapon.gameObject.SetActive(true);
         canShoot = true;
     }
 
-
     private void CustomGravity()
     {
         if(rb.velocity.y != 0)
+        {
             currentVspeed -= gravityMultiplier;
-        if (rb.velocity.y < 0)
-            currentVspeed -= gravityMultiplier * 1.2f;
-        if (currentVspeed > 0)
-            if (!Input.GetButton("Jump"))
-                currentVspeed -= gravityMultiplier * 0.8f;
+
+            if (rb.velocity.y < 0)
+                currentVspeed -= gravityMultiplier * 1.2f;
+
+            else if (currentVspeed > 0)
+                if (!Input.GetButton("Jump"))
+                    currentVspeed -= gravityMultiplier * 0.8f;
+        }
 
         if (surf.GroundDetection() && currentVspeed < 0)
             currentVspeed = 0;
@@ -124,10 +135,12 @@ public class PlayerController : MonoBehaviour
     {
         if (InputH != 0)
         {
-            if (Mathf.Sign(InputH) == Mathf.Sign(currentHSpeed))
-                currentHSpeed += Mathf.Sign(InputH) * accel;
+            float inputSign = Mathf.Sign(InputH);
+
+            if (inputSign == Mathf.Sign(currentHSpeed))
+                currentHSpeed += inputSign * accel;
             else
-                currentHSpeed += Mathf.Sign(InputH) * accel * 2;
+                currentHSpeed += inputSign * accel * 2;
 
             speedValue = Mathf.Abs(currentHSpeed);
 
@@ -150,13 +163,6 @@ public class PlayerController : MonoBehaviour
             }
     }
 
-    private IEnumerator ResetShoot()
-    {
-        canShoot = false;
-        yield return new WaitForSeconds(0.2f);
-        canShoot = true;
-    }
-
     public void Death()
     {
         if(dead == false)
@@ -166,5 +172,14 @@ public class PlayerController : MonoBehaviour
             UIManager.Instance.BlackFade(true);
             playerAnim.Death();
         }
+    }
+
+
+    //Coroutines
+    private IEnumerator ResetShoot()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(0.2f);
+        canShoot = true;
     }
 }

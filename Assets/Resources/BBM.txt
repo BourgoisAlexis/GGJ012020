@@ -3,23 +3,23 @@
 
 
 /A/
-Huuumm ... Hi ?
+Ahem ... Hi ?
 /A/
-Oh what a busu ! (ugly)
+Oh my god, what a busu ! (ugly)
 /A/
-Hellooo you sweet girl *smiling sweetly*.
+Hellooo, you're such a sweet and charming girl ! *smiling sweetly*.
 /AA/
 
 
 /R/
 0
-Hello. My name is BBM I am an AI suited for engine room.
+Hello. My name is BBM. I am an A.I suited for engine room.
 /R/
 -1
 Another one ... *sigh*
 /R/
 1
-*embarrassed* He...Hello. My name is BBM I am an AI suited for engine room.
+*embarrassed* He...Hello. My name is BBM, and i am an AI suited for engine room.
 /RR/
 
 What can I do for you ?
@@ -27,9 +27,9 @@ What can I do for you ?
 
 
 /A/
-Shut the f*ck up and LET ME OUT OF HERE !
+Shut the f*ck up AND LET ME OUT OF HERE B*TCH!
 /A/
-First... What can "I" do for you ? *with a big smile*
+Firstly... What can "I" do for you ? *big smile*
 /A/
 What happened to the ship ?
 /AA/
@@ -47,14 +47,14 @@ Twenty years ago...
 /RR/
 
 Aliens invaded our ship and killed all the personnal aboard. 
-After this incident my superior send an SOS and then you are here now.
+After this incident, my superior send an SOS, and then, here you are.
 /Q/
 
 
 /A/
 Don't worry I'm here to protect you !
 /A/
-Your superior ? interesting ;3
+Your superior ? Sound interesting ;3
 /A/
 How can I help you ?
 /AA/
@@ -62,10 +62,10 @@ How can I help you ?
 
 /R/
 1
-Thanks.
+Thank you for you concern.
 /R/
 -1
-*sigh* Everyone prefers my superior and I am just left all alone to do my job.
+*sigh* Everyone prefers my superior, and here i am, just left all alone to do my job.
 /R/
 0
 Yes.
@@ -95,7 +95,7 @@ Not this one !
 Touch this button.
 /RR/
 
-Touch my button... The green one to turn on the engine.
+Touch my button... The green one, to turn on the engine.
 /Q/
 
 
@@ -114,6 +114,30 @@ Touch my button... The green one to turn on the engine.
 /R/
 -1
 ...
+/R/
+0
+...
+/RR/
+
+...
+/Q/
+
+
+/A/
+Are you ok, babe ?
+/A/
+OI, say something, ugly
+/A/
+Hello ?
+/AA/
+
+
+/R/
+1
+Everything is alright, thank you.
+/R/
+-1
+...no.
 /R/
 0
 ...

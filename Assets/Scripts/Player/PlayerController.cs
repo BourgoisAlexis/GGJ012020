@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviour
             if(canShoot)
             {
                 Instantiate(BulletPrefab, Weapon.position, Weapon.rotation);
-                StartCoroutine(ResetShoot());
+                StartCoroutine(ShootDelay());
                 CameraManager.Instance.Shake();
                 buffer.Executed("Shoot");
             }
@@ -165,7 +165,7 @@ public class PlayerController : MonoBehaviour
 
     public void Death()
     {
-        if(dead == false)
+        if(!dead)
         {
             dead = true;
             canInput = false;
@@ -176,7 +176,7 @@ public class PlayerController : MonoBehaviour
 
 
     //Coroutines
-    private IEnumerator ResetShoot()
+    private IEnumerator ShootDelay()
     {
         canShoot = false;
         yield return new WaitForSeconds(0.2f);

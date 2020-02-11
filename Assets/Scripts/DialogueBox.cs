@@ -44,8 +44,16 @@ public class DialogueBox : MonoBehaviour
 
     private void Update()
     {
-        if(answering)
+        Skip();
+
+        if (answering)
             Answering();
+    }
+
+    private void Skip()
+    {
+        if (Input.GetButtonDown("Jump"))
+            SkipPressed();
     }
 
 

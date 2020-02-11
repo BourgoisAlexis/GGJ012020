@@ -1,15 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SurfaceDetection : MonoBehaviour
 {
+    #region Variables
     public LayerMask Ground;
 
     private float distance = 0.4f;
     private float width = 0.1f;
     private float step = 3;
     private float increment;
+    #endregion
+
 
     private void Awake()
     {
@@ -27,7 +28,6 @@ public class SurfaceDetection : MonoBehaviour
             if (Physics2D.Raycast(transform.position + (Vector3.right * i), -Vector2.up, distance, Ground))
                 return true;
         }
-
         return false;
     }
 }

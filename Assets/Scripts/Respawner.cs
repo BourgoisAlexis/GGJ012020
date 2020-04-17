@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using System.IO;
 using UnityEngine;
+
 
 public class Respawner : MonoBehaviour
 {
@@ -9,9 +9,6 @@ public class Respawner : MonoBehaviour
 
     #region Variables
     private List<Transform> RespawnPoints = new List<Transform>();
-
-    //private const string path = "GGJ_01_2020_Data/Resources/Save.txt";
-    private const string path = "Assets/Resources/Save.txt";
     private int index;
     #endregion
 
@@ -36,21 +33,30 @@ public class Respawner : MonoBehaviour
             RespawnPoints[i].GetComponent<RespawnPoint>().Index = i;
     }
 
+
     public void UpdateIndex(int _index)
     {
-        StreamWriter save;
+        if(_index >= index)
+        {
+            StreamWriter save;
 
-        if(File.Exists(path))
-            File.Delete(path);
+            string path = Application.dataPath + "/Resources/save.txt";
 
-        save = File.CreateText(path);
-        save.WriteLine(_index.ToString());
-        save.Close();
+            if (File.Exists(path))
+                File.Delete(path);
+
+            save = File.CreateText(path);
+            save.WriteLine(_index.ToString());
+            save.Close();
+        }
+
+        index = _index;
     }
+
 
     public void Respawn(Transform _player)
     {
-        string index = File.ReadAllLines(path)[0];
+        string index = File.ReadAllLines(Application.dataPath + "/Resources/save.txt")[0];
         _player.position = RespawnPoints[int.Parse(index)].position;
     }
 }

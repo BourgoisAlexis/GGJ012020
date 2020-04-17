@@ -28,9 +28,6 @@ public class DialogueBox : MonoBehaviour
     private const string reaction = "/R/";
     private const string reactionEnd = "/RR/";
     private const string end = "/E/";
-
-    //private const string path = "GGJ_01_2020_Data/Resources/";
-    private const string path = "Assets/Resources/";
     #endregion
 
 
@@ -66,7 +63,11 @@ public class DialogueBox : MonoBehaviour
         boxGraph.UpdateHealth(score);
         boxGraph.UpdateBackSprite(characterName, 0);
 
-        lines = File.ReadAllLines(path + characterName + ".txt");
+        lines = Resources.Load<TextAsset>(_name).text.Split("\n"[0]);
+
+        for (int i = 0; i < lines.Length - 1; i++)
+            lines[i] = lines[i].Substring(0, lines[i].Length - 1);
+
         StartCoroutine(UpdateText());
     }
 
@@ -103,6 +104,9 @@ public class DialogueBox : MonoBehaviour
             toDisplay += lines[lineIndex][current];
             current++;
             Text.text = toDisplay;
+
+            if(current % 3 == 0)
+                AudioManager.Instance.PlaySound(characterName, 1);
         }
 
         canAct = true;

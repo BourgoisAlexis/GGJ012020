@@ -128,6 +128,7 @@ public class PlayerController : MonoBehaviour
                 currentVspeed = jumpHeight;
                 buffer.Executed("Jump");
                 playerAnim.Jump();
+                AudioManager.Instance.PlaySound("Jump", 1);
             }
     }
 
@@ -160,6 +161,7 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(ShootDelay());
                 CameraManager.Instance.Shake();
                 buffer.Executed("Shoot");
+                AudioManager.Instance.PlaySound("Shoot", 1);
             }
     }
 
@@ -171,6 +173,7 @@ public class PlayerController : MonoBehaviour
             canInput = false;
             UIManager.Instance.BlackFade(true);
             playerAnim.Death();
+            AudioManager.Instance.PlaySound("GameOver", 1);
         }
     }
 

@@ -94,6 +94,7 @@ public class Enemy : MonoBehaviour
         canAttack = false;
         Visual.sprite = Atk;
         Vector2 dif = target.position - _transform.position;
+        AudioManager.Instance.PlaySound("MonsterAttack", 0.5f);
 
         if (Mathf.Sign(_transform.right.x) != Mathf.Sign(dif.x))
             _transform.eulerAngles += new Vector3(0, 180, 0);

@@ -1,25 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using Pixeye.Unity;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
-    
+
     #region Values
-    public int Smoothing;
     [Range(0, 1)]
     public float generalVolume, musicVolume;
 
-    public AudioClip[] Sounds;
-    [Foldout("AudioSources", true)]
-    public AudioSource MusicPlayerI;
-    public AudioSource MusicPlayerII;
-    public AudioSource[] AudioPlayers;
+    [SerializeField] private int Smoothing;
+    [SerializeField] private AudioClip[] Sounds;
 
+    private AudioSource MusicPlayerI;
+    private AudioSource MusicPlayerII;
+    private List<AudioSource> AudioPlayers = new List<AudioSource>();
 
     private Dictionary<string, AudioClip> clips = new Dictionary<string, AudioClip>();
+
     private AudioSource toDown;
     private AudioSource toUp;
     private float incrementUp;
@@ -29,8 +28,6 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
-
         if (Instance == null)
             Instance = this;
         else
@@ -41,6 +38,12 @@ public class AudioManager : MonoBehaviour
 
     public void Setup()
     {
+        MusicPlayerI = gameObject.AddComponent<AudioSource>();
+        MusicPlayerII = gameObject.AddComponent<AudioSource>();
+        AudioPlayers.Add (gameObject.AddComponent<AudioSource>());
+        AudioPlayers.Add (gameObject.AddComponent<AudioSource>());
+        AudioPlayers.Add (gameObject.AddComponent<AudioSource>());
+
         MusicPlayerI.loop = true;
         MusicPlayerII.loop = true;
 
@@ -50,10 +53,30 @@ public class AudioManager : MonoBehaviour
     }
 
 
+    //Returns a sound from the sound dictio
+    public AudioClip GetSound(string _sound)
+    {
+        if (clips.ContainsKey(_sound))
+            return clips[_sound];
+
+        return null;
+    }
+
+    public AudioClip GetRandomSound(string[] _sounds)
+    {
+        string sound = _sounds[Random.Range(0, _sounds.Length)];
+
+        if (clips.ContainsKey(sound))
+            return clips[sound];
+
+        return null;
+    }
+
+    //PlaySounds
     public void PlaySound(string _sound, float _volume)
     {
         if (clips.ContainsKey(_sound))
-            for (int i = 0; i < AudioPlayers.Length; i++)
+            for (int i = 0; i < AudioPlayers.Count; i++)
             {
                 AudioSource useSource = AudioPlayers[i];
 
@@ -72,7 +95,7 @@ public class AudioManager : MonoBehaviour
         string sound = _sounds[Random.Range(0, _sounds.Length)];
 
         if (clips.ContainsKey(sound))
-            for (int i = 0; i < AudioPlayers.Length; i++)
+            for (int i = 0; i < AudioPlayers.Count; i++)
             {
                 AudioSource useSource = AudioPlayers[i];
 

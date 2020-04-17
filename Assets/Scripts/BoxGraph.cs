@@ -31,7 +31,10 @@ public class BoxGraph : MonoBehaviour
     public void UpdateBackSprite(string _name, int _index)
     {
         if (_index < 0)
+        {
             CameraManager.Instance.Shake();
+            AudioManager.Instance.PlaySound("Hurt", 1);
+        }
         _index++;
         Sprite[] current = BackSprites[_name];
         BackSprite.sprite = current[_index];
